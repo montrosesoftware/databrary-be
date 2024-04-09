@@ -16,20 +16,20 @@
 
 **Local development server:**
 
-'make serve'
+`make serve`
 
-### mirations
+### migrations
 
-'make make-migrations'
-'make migrate'
+`make make-migrations`
+`make migrate`
 
 ### tests
 
-'make test'
+`make test`
 
 ### pre-commit
 
-'make pre-commit'
+`make pre-commit`
 
 Implemented:
 
