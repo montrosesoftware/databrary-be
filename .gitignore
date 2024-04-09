@@ -1,0 +1,23 @@
+# ENVIRONMENT
+venv/
+.venv/
+
+# IDE / OS
+/.idea/
+/.vscode/
+.vscode/
+*.DS_Store
+
+# PYTHON
+*.pyc
+__pycache__
+db.sqlite3
+mypy_cache
+pytest_cache
+
+# TESTS
+.coverage
+cov.xml
+
+# LOGS
+*.log
