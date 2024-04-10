@@ -1,12 +1,14 @@
 # Databrary
 
+"World only repository for research video" --Karen Adolph @  NYU
+
 ## Requirements
 
 | Tool   | Version |
 | ------ | ------- |
-| Python | ^3.12   |
-| Poetry | ^1.8.2  |
-| Docker | ?       |
+| Python | 3.12    |
+| Poetry | 1.8.2   |
+| Docker | 24.0.6  |
 
 ## Setup
 
@@ -14,9 +16,18 @@
 
 ## Running
 
+**Dockerized development server:**
+
+```bash
+docker-compose up # with --build on setup
+```
+
 **Local development server:**
 
-`make serve`
+```bash
+export DJANGO_SETTINGS_MODULE=databrary.settings.local
+make serve
+```
 
 ### migrations
 

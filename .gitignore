@@ -1,6 +1,7 @@
 # ENVIRONMENT
 venv/
 .venv/
+.env*
 
 # IDE / OS
 /.idea/

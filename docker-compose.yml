@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  databrary-db:
+    image: postgres:16.2-alpine
+    container_name: databrary-db
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U databrary -d databrary"]
+      interval: 5s
+      retries: 5
+      start_period: 10s
+
+  databrary:
+    container_name: databrary
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=databrary.settings.dev
+    depends_on:
+      databrary-db:
+        condition: service_healthy
