@@ -1,6 +1,6 @@
 # Databrary
 
-"World only repository for research video" --Karen Adolph @  NYU
+"World only repository for research video" --Karen Adolph @ NYU
 
 ## Requirements
 
@@ -10,39 +10,9 @@
 | Poetry | 1.8.2   |
 | Docker | 24.0.6  |
 
-## Setup
-
-`make setup`
-
-## Running
-
-**Dockerized development server:**
-
-```bash
-docker-compose up # with --build on setup
-```
-
-**Local development server:**
-
-```bash
-export DJANGO_SETTINGS_MODULE=databrary.settings.local
-make serve
-```
-
-### migrations
-
-`make make-migrations`
-`make migrate`
-
-### tests
-
-`make test`
+## Coding Standards
 
 ### pre-commit
-
-`make pre-commit`
-
-Implemented:
 
 - check-yaml
 - end-of-file-fixer
@@ -51,3 +21,37 @@ Implemented:
 - isort
 - mypy
 - flake8
+
+## Developement Environment
+
+### setup
+
+`make setup`
+
+### developement server
+
+**Dockerized**
+
+```bash
+docker-compose up # with --build on setup
+# or
+make up
+```
+
+**Standalone**
+
+ `make serve`
+
+### migrations
+
+`make make-migrations`
+
+`make migrate`
+
+### test
+
+`make test`
+
+### pre-commit
+
+'make pre-commit'

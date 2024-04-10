@@ -27,7 +27,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DJANGO_SETTINGS_MODULE=databrary.settings.dev
+      - DJANGO_SETTINGS_MODULE=databrary.settings.local
     depends_on:
       databrary-db:
         condition: service_healthy

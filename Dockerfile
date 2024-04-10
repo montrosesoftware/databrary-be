@@ -5,9 +5,8 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-COPY poetry.lock pyproject.toml entrypoint.sh /app/
-RUN chmod +x /app/entrypoint.sh
-RUN pip install poetry && poetry config virtualenvs.create false && poetry install --no-dev
+COPY poetry.lock pyproject.toml /app/
+RUN pip install poetry && poetry config virtualenvs.create false && poetry install
 
 COPY . /app/
 
