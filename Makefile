@@ -14,4 +14,8 @@ pre-commit:
 	poetry run pre-commit run --all-files
 
 test:
-	poetry run pytest
+	poetry run coverage run ./manage.py test
+
+test-coverage:
+	$(MAKE) test
+	poetry run coverage report -m

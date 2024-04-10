@@ -23,8 +23,19 @@ repos:
     rev: 'v1.9.0'
     hooks:
       - id: mypy
+        additional_dependencies:
+        - django-stubs
 
   - repo: https://github.com/pycqa/flake8
     rev: 6.1.0
     hooks:
       - id: flake8
+
+  - repo: local
+    hooks:
+    - id: tests
+      name: tests
+      entry: poetry run pytest
+      language: system
+      types: [python]
+      pass_filenames: false
