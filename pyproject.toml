@@ -12,10 +12,13 @@ django = "^5.0.4"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.7.0"
+pytest = "^8.1.1"
+coverage = "^7.4.4"
+django-stubs = "^4.2.7"
 
 
 [tool.poetry.group.pytest.dependencies]
-pytest = "^8.1.1"
+django-stubs = {extras = ["compatible-mypy"], version = "^1.12.0"}
 
 [build-system]
 requires = ["poetry-core"]
@@ -33,3 +36,21 @@ include_trailing_comma = true
 line_length = 88
 multi_line_output = 3
 known_first_party = ["config"]
+
+[mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"] # noqa
+
+[tool.django-stubs]
+django_settings_module = "databrary.settings"
+
+[tool.coverage.run]
+branch = true
+omit = [
+    ".venv/*",
+    "tests/*",
+]
