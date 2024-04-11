@@ -9,6 +9,8 @@ services:
       - .env
     ports:
       - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U databrary -d databrary"]
       interval: 5s
@@ -31,3 +33,6 @@ services:
     depends_on:
       databrary-db:
         condition: service_healthy
+
+volumes:
+  pgdata:
